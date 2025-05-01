@@ -24,7 +24,7 @@ Me apasiona investigar, practicar en entornos reales y desarrollar proyectos que
 
 ## 💼 Proyectos destacados
 
-- **[Portafolio Personal Web](https://emm4nuelcm.github.io/Portfolio/)** — Sitio personal con proyectos y habilidades destacados.
+- **[Portafolio Personal Web](https://srrusian.github.io/Portfolio/)** — Sitio personal con proyectos y habilidades destacados.
 - **Repositorio de Notas de Pentesting (próximamente)** — Recopilación de técnicas, laboratorios resueltos y cheatsheets de seguridad ofensiva.
 
 ---
@@ -55,8 +55,8 @@ Me apasiona investigar, practicar en entornos reales y desarrollar proyectos que
 ## 📫 Contacto
 
 - 📧 **Correo:** [tuemail@ejemplo.com](mailto:tuemail@ejemplo.com)
-- 🔗 **LinkedIn:** [Mi perfil de LinkedIn](https://www.linkedin.com/in/tuusuario)
-- 🐙 **GitHub:** [@Emm4nuelCM](https://github.com/Emm4nuelCM)
+- 🔗 **LinkedIn:** [Mi perfil de LinkedIn](https://www.linkedin.com/in/srrusian)
+- 🐙 **GitHub:** [@SrRusian](https://github.com/SrRusian)
 
 ---
 
