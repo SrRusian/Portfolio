@@ -1,6 +1,6 @@
 // Función para el efecto de typing en el elemento #typing-text
 function typingEffect() {
-    const words = ["Ethical Hacker", "Software Tester", "Backend Developer"];
+    const words = ["an Ethical Hacker", "a Software Tester", "a Backend Developer", "a Pentester", "a Linux Enthusiast", "a Security Researcher"];
     let wordIndex = 0;
     let letterIndex = 0;
     let isDeleting = false;
