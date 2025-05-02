@@ -65,5 +65,5 @@ function typingEffect() {
   }  
 
   navbar();
-  typingEffect();
+  typingEffect(); 
   

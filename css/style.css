@@ -366,7 +366,7 @@ span {
   width: 15rem;
   border-radius: 50%;
   border: 3px solid var(--main-color);
-  box-shadow: 0 0 25px var(--main-color);
+  box-shadow: 0 0 25px var(--main-color); Ethical Hacker
 }
 .wrapper {
   display: grid;
@@ -588,7 +588,7 @@ span {
   }
   .home-content p {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 0 auto; Ethical Hacker
   }
   .home-img img {
     width: 60vw;
@@ -659,4 +659,4 @@ span {
   grid-column: span 4;
   text-align: center;
 }
-
+ 
