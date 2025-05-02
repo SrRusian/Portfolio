@@ -54,7 +54,7 @@ Me apasiona investigar, practicar en entornos reales y desarrollar proyectos que
 
 ## 📫 Contacto
 
-- 📧 **Correo:** [tuemail@ejemplo.com](mailto:tuemail@ejemplo.com)
+- 📧 **Correo:** [srremmanuelm@gmail.com](mailto:srremmanuelm@gmail.com)
 - 🔗 **LinkedIn:** [Mi perfil de LinkedIn](https://www.linkedin.com/in/srrusian)
 - 🐙 **GitHub:** [@SrRusian](https://github.com/SrRusian)
 
