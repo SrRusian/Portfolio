@@ -14,7 +14,7 @@
 :root {
   --bg-color: #080808;
   --second-bg-color: #131313;
-  --text-color: white;
+  --text-color: #f0f0f0;
   --main-color: #00ffee;
   --highlight-color: #ffcc00;
 }
@@ -260,9 +260,17 @@ span {
   transform: translateX(-50%);
 }
 .timeline-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: calc(var(--i) * 0.2s);
   margin-bottom: 60px;
-  width: 100%;
-  position: relative;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .timeline-item:nth-child(odd) {
   padding-right: calc(50% + 30px);
@@ -271,6 +279,19 @@ span {
 .timeline-item:nth-child(even) {
   padding-left: calc(50% + 30px);
 }
+.timeline-item:nth-child(odd) .timeline-content ul {
+  padding-right: 0;
+  margin-right: 0;
+  list-style-position: outside;
+  text-align: right;
+  padding-inline-start: 1.2em;
+}
+
+.timeline-item:nth-child(odd) .timeline-content ul li {
+  text-align: right;
+  margin-bottom: 0.6rem;
+}
+
 .timeline-dot {
   height: 20px;
   width: 20px;
@@ -284,14 +305,14 @@ span {
 .timeline-date {
   font-size: 20px;
   font-weight: 800;
-  color: white;
+  color: #f0f0f0;
   margin: 6px 0 15px;
 }
 .timeline-content {
   background-color: var(--bg-color);
   border: 3px solid var(--main-color);
-  padding: 30px 50px;
-  border-radius: 4rem;
+  padding: 30px 40px;
+  border-radius: 3rem;
   box-shadow: 0 0 10px var(--main-color);
   transition: 0.3s ease-in-out;
 }
@@ -300,16 +321,26 @@ span {
   box-shadow: 0 0 25px var(--main-color);
 }
 .timeline-content h3 {
-  font-size: 20px;
-  color: white;
-  margin: 0 0 10px;
-  font-weight: 500;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--main-color);
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 .timeline-content p {
-  color: white;
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 22px;
+  font-size: 15px;
+  color: #ccc;
+  line-height: 1.7;
+}
+.timeline-content ul {
+  margin-top: 10px;
+  margin-left: 20px;
+  padding-left: 20px;
+  color: #ccc;
+  font-size: 15px;
+  line-height: 1.6;
+  list-style-type: disc;
 }
 ::-webkit-scrollbar {
   width: 15px;
