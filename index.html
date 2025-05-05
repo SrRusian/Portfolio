@@ -20,9 +20,7 @@
         <a href="#home" class="active">Home</a>
         <a href="#education">Education</a>
         <a href="#services">Services</a>
-        <!-- <a href="#testimonials">Testimonials</a> -->
         <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
       </nav>
     </header>
 
@@ -65,8 +63,35 @@
         </div>
 
         <div class="btn-group">
-          <a href="#" class="btn">Hire</a>
-          <a href="#contact" class="btn">Contact</a>
+          <a href="#" class="btn" id="open-contact">CONTACT</a>
+        </div>
+        <div class="contact-modal" id="contact-modal">
+          <div class="contact-modal-content">
+            <h2 class="heading">Contact <span>Me</span></h2>
+            <form action="">
+              <div class="input-group">
+                <div class="input-box">
+                  <input type="text" placeholder="Full Name" />
+                  <input type="email" placeholder="Email" />
+                </div>
+                <div class="input-box">
+                  <input type="number" placeholder="Phone Number" />
+                  <input type="text" placeholder="Subject" />
+                </div>
+              </div>
+              <div class="input-group-2">
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="Your Message"
+                ></textarea>
+                <input type="submit" value="Send Message" class="btn" />
+              </div>
+            </form>
+            <button class="close-modal" id="close-contact">X</button>
+          </div>
         </div>
       </div>
 
@@ -337,35 +362,6 @@
         </div>
       </div>
     </section>
-
-    <section class="contact" id="contact">
-      <h2 class="heading">Contact <span>Me</span></h2>
-
-      <form action="">
-        <div class="input-group">
-          <div class="input-box">
-            <input type="text" placeholder="Full Name" />
-            <input type="email" placeholder="Email" />
-          </div>
-          <div class="input-box">
-            <input type="number" placeholder="Phone Number" />
-            <input type="text" placeholder="Subject" />
-          </div>
-        </div>
-
-        <div class="input-group-2">
-          <textarea
-            name=""
-            id=""
-            cols="30"
-            rows="10"
-            placeholder="Your Message"
-          ></textarea>
-          <input type="submit" value="Send Message" class="btn" />
-        </div>
-      </form>
-    </section>
-
     <footer class="footer">
       <!--
       <div class="social">

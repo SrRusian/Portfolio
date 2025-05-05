@@ -40,34 +40,60 @@ function typingEffect() {
     }
   
     type();
-  }
+};
 
-  function navbar() {
-    const menuIcon = document.querySelector('#menu-icon'); // Selecciona el icono del menú
-    const navbar = document.querySelector('.navbar'); // Selecciona la barra de navegación
-    const navLinks = document.querySelectorAll('.navbar a'); // Selecciona todos los enlaces dentro de la barra de navegación
+function navbar() {
+  const menuIcon = document.querySelector('#menu-icon'); // Selecciona el icono del menú
+  const navbar = document.querySelector('.navbar'); // Selecciona la barra de navegación
+  const navLinks = document.querySelectorAll('.navbar a'); // Selecciona todos los enlaces dentro de la barra de navegación
   
-    // Actualiza la clase activa en el enlace seleccionado y desactiva los demás
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.forEach(link => link.classList.remove('active')); // Elimina la clase activa de todos los enlaces
-        link.classList.add('active'); // Agrega la clase activa al enlace seleccionado
+  // Actualiza la clase activa en el enlace seleccionado y desactiva los demás
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.forEach(link => link.classList.remove('active')); // Elimina la clase activa de todos los enlaces
+      link.classList.add('active'); // Agrega la clase activa al enlace seleccionado
   
-        // Cierra el menú en dispositivos pequeños después de seleccionar una opción
-        if (navbar.classList.contains('active')) {
-          navbar.classList.remove('active'); // Cierra el menú
-          menuIcon.classList.remove('bx-x'); // Cambia el icono del menú
-        }
-      });
+      // Cierra el menú en dispositivos pequeños después de seleccionar una opción
+      if (navbar.classList.contains('active')) {
+        navbar.classList.remove('active'); // Cierra el menú
+        menuIcon.classList.remove('bx-x'); // Cambia el icono del menú
+      }
     });
+   });
   
-    // Activa/desactiva el menú móvil al hacer clic en el icono
-    menuIcon.onclick = () => {
-      menuIcon.classList.toggle('bx-x'); // Restaura el icono del menú
-      navbar.classList.toggle('active'); // Desactiva la barra de navegación
-    };
-  }  
+  // Activa/desactiva el menú móvil al hacer clic en el icono
+  menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x'); // Restaura el icono del menú
+    navbar.classList.toggle('active'); // Desactiva la barra de navegación
+  };
+}
 
-  navbar();
-  typingEffect(); 
-  
+function openModal() {
+  // Modal Contact Form
+  const openContact = document.getElementById("open-contact");
+  const closeContact = document.getElementById("close-contact");
+  const contactModal = document.getElementById("contact-modal");
+
+  // Abrir el modal
+  openContact.addEventListener("click", (e) => {
+    e.preventDefault(); // Evita el comportamiento por defecto del enlace
+    contactModal.style.display = "flex"; // Muestra el modal
+  });
+
+  // Cerrar el modal
+  closeContact.addEventListener("click", () => {
+    contactModal.style.display = "none"; // Oculta el modal
+  });
+
+  // Cerrar el modal al hacer clic fuera del contenido
+  window.addEventListener("click", (e) => {
+    if (e.target === contactModal) {
+      contactModal.style.display = "none";
+    }
+  });
+}
+
+navbar();
+typingEffect();
+openModal();
+
