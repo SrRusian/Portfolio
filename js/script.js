@@ -68,7 +68,7 @@ function navbar() {
   };
 }
 
-function openModal() {
+function openContactModal() {
   // Modal Contact Form
   const openContact = document.getElementById("open-contact");
   const closeContact = document.getElementById("close-contact");
@@ -93,7 +93,57 @@ function openModal() {
   });
 }
 
+// Desplazamiento automático al siguiente apartado
+function autoScroll() {
+  const sections = document.querySelectorAll("section"); // Selecciona todas las secciones
+  let isScrolling = false;
+  let lastScrollPosition = window.scrollY; // Guarda la posición del scroll anterior
+
+  window.addEventListener("scroll", () => {
+    if (isScrolling) return; // Evita múltiples ejecuciones
+    isScrolling = true;
+
+    setTimeout(() => {
+      const currentScrollPosition = window.scrollY; // Posición actual del scroll
+      const viewportHeight = window.innerHeight; // Altura de la ventana
+      let targetSection = null;
+
+      if (currentScrollPosition > lastScrollPosition) {
+        // Desplazamiento hacia abajo
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop; // Posición superior de la sección
+          if (currentScrollPosition < sectionTop && sectionTop < currentScrollPosition + viewportHeight) {
+            targetSection = section; // Encuentra la siguiente sección
+          }
+        });
+      } else {
+        // Desplazamiento hacia arriba
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop; // Posición superior de la sección
+          if (currentScrollPosition > sectionTop && sectionTop + section.offsetHeight > currentScrollPosition) {
+            targetSection = section; // Encuentra la sección anterior
+          }
+        });
+      }
+
+      // Si hay una sección objetivo, desplázate hacia ella
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      }
+
+      lastScrollPosition = currentScrollPosition; // Actualiza la posición del scroll
+      isScrolling = false;
+    }, 200); // Tiempo de espera para evitar activaciones rápidas
+  });
+} 
+
+//Deshabilitar el desplazamiento automático en dispositivos móviles
+if (window.innerWidth > 768) {
+  autoScroll();
+}
+
+// Inicializa las funciones
 navbar();
 typingEffect();
-openModal();
-
+openContactModal();
+ 
