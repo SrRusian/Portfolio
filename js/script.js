@@ -96,11 +96,55 @@ function openContactModal() {
 // Desplazamiento automático al siguiente apartado
 function autoScroll() {
   const sections = document.querySelectorAll("section"); // Selecciona todas las secciones
+  const navLinks = document.querySelectorAll(".navbar a"); // Selecciona los enlaces de la navbar
   let isScrolling = false;
   let lastScrollPosition = window.scrollY; // Guarda la posición del scroll anterior
+  let manualScroll = false; // Bandera para detectar scroll manual (clic en navbar)
+  let animationInProgress = false; // Bandera para evitar animaciones superpuestas
+
+  // Detectar clic en los enlaces de la navbar
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      if (animationInProgress) return; // Evita múltiples animaciones
+      manualScroll = true; // Activa la bandera de scroll manual
+      animationInProgress = true; // Marca que una animación está en curso
+
+      const targetId = link.getAttribute("href").substring(1); // Obtiene el ID de la sección objetivo
+      const targetSection = document.getElementById(targetId); // Selecciona la sección objetivo
+
+      if (targetSection) {
+        e.preventDefault(); // Evita el comportamiento por defecto del enlace
+        targetSection.scrollIntoView({ behavior: "smooth" }); // Desplázate suavemente a la sección objetivo
+
+        setTimeout(() => {
+          animationInProgress = false; // Permite nuevas animaciones después de un tiempo
+          manualScroll = false; // Desactiva la bandera de scroll manual
+        }, 1000); // Ajusta el tiempo según la duración de la animación
+      }
+    });
+  });
+
+  // Actualizar la clase activa en la navbar según la sección visible
+  function updateActiveNav() {
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop; // Posición superior de la sección
+      const sectionHeight = section.offsetHeight; // Altura de la sección
+      const scrollPosition = window.scrollY + window.innerHeight / 2; // Posición del scroll (ajustada al centro del viewport)
+
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        const sectionId = section.getAttribute("id"); // Obtiene el ID de la sección
+        navLinks.forEach((link) => {
+          link.classList.remove("active"); // Elimina la clase activa de todos los enlaces
+          if (link.getAttribute("href").substring(1) === sectionId) {
+            link.classList.add("active"); // Agrega la clase activa al enlace correspondiente
+          }
+        });
+      }
+    });
+  }
 
   window.addEventListener("scroll", () => {
-    if (isScrolling) return; // Evita múltiples ejecuciones
+    if (isScrolling || manualScroll || animationInProgress) return; // Evita múltiples ejecuciones o interferencias
     isScrolling = true;
 
     setTimeout(() => {
@@ -131,11 +175,15 @@ function autoScroll() {
         targetSection.scrollIntoView({ behavior: "smooth" });
       }
 
+      updateActiveNav(); // Actualiza la clase activa en la navbar
       lastScrollPosition = currentScrollPosition; // Actualiza la posición del scroll
       isScrolling = false;
     }, 200); // Tiempo de espera para evitar activaciones rápidas
   });
-} 
+
+  // Llama a updateActiveNav al cargar la página para establecer la sección activa inicial
+  updateActiveNav();
+}
 
 //Deshabilitar el desplazamiento automático en dispositivos móviles
 if (window.innerWidth > 768) {
