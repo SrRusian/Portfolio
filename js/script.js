@@ -93,105 +93,52 @@ function openContactModal() {
   });
 }
 
-// Desplazamiento automático al siguiente apartado
-function autoScroll() {
-  const sections = document.querySelectorAll("section"); // Selecciona todas las secciones
-  const navLinks = document.querySelectorAll(".navbar a"); // Selecciona los enlaces de la navbar
-  let isScrolling = false;
-  let lastScrollPosition = window.scrollY; // Guarda la posición del scroll anterior
-  let manualScroll = false; // Bandera para detectar scroll manual (clic en navbar)
-  let animationInProgress = false; // Bandera para evitar animaciones superpuestas
-
-  // Detectar clic en los enlaces de la navbar
-  navLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
-      if (animationInProgress) return; // Evita múltiples animaciones
-      manualScroll = true; // Activa la bandera de scroll manual
-      animationInProgress = true; // Marca que una animación está en curso
-
-      const targetId = link.getAttribute("href").substring(1); // Obtiene el ID de la sección objetivo
-      const targetSection = document.getElementById(targetId); // Selecciona la sección objetivo
-
-      if (targetSection) {
-        e.preventDefault(); // Evita el comportamiento por defecto del enlace
-        targetSection.scrollIntoView({ behavior: "smooth" }); // Desplázate suavemente a la sección objetivo
-
-        setTimeout(() => {
-          animationInProgress = false; // Permite nuevas animaciones después de un tiempo
-          manualScroll = false; // Desactiva la bandera de scroll manual
-        }, 1000); // Ajusta el tiempo según la duración de la animación
-      }
-    });
-  });
-
-  // Actualizar la clase activa en la navbar según la sección visible
-  function updateActiveNav() {
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop; // Posición superior de la sección
-      const sectionHeight = section.offsetHeight; // Altura de la sección
-      const scrollPosition = window.scrollY + window.innerHeight / 2; // Posición del scroll (ajustada al centro del viewport)
-
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        const sectionId = section.getAttribute("id"); // Obtiene el ID de la sección
-        navLinks.forEach((link) => {
-          link.classList.remove("active"); // Elimina la clase activa de todos los enlaces
-          if (link.getAttribute("href").substring(1) === sectionId) {
-            link.classList.add("active"); // Agrega la clase activa al enlace correspondiente
-          }
-        });
-      }
-    });
-  }
+function updateNavbarOnScroll() {
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".navbar a");
 
   window.addEventListener("scroll", () => {
-    if (isScrolling || manualScroll || animationInProgress) return; // Evita múltiples ejecuciones o interferencias
-    isScrolling = true;
+    let currentSection = "";
 
-    setTimeout(() => {
-      const currentScrollPosition = window.scrollY; // Posición actual del scroll
-      const viewportHeight = window.innerHeight; // Altura de la ventana
-      let targetSection = null;
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop - 100; // Adjust offset for better accuracy
+      const sectionHeight = section.offsetHeight;
 
-      if (currentScrollPosition > lastScrollPosition) {
-        // Desplazamiento hacia abajo
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop; // Posición superior de la sección
-          if (currentScrollPosition < sectionTop && sectionTop < currentScrollPosition + viewportHeight) {
-            targetSection = section; // Encuentra la siguiente sección
-          }
-        });
-      } else {
-        // Desplazamiento hacia arriba
-        sections.forEach((section) => {
-          const sectionTop = section.offsetTop; // Posición superior de la sección
-          if (currentScrollPosition > sectionTop && sectionTop + section.offsetHeight > currentScrollPosition) {
-            targetSection = section; // Encuentra la sección anterior
-          }
-        });
+      if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+        currentSection = section.getAttribute("id");
       }
+    });
 
-      // Si hay una sección objetivo, desplázate hacia ella
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: "smooth" });
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
+      if (link.getAttribute("href").substring(1) === currentSection) {
+        link.classList.add("active");
       }
-
-      updateActiveNav(); // Actualiza la clase activa en la navbar
-      lastScrollPosition = currentScrollPosition; // Actualiza la posición del scroll
-      isScrolling = false;
-    }, 200); // Tiempo de espera para evitar activaciones rápidas
+    });
   });
-
-  // Llama a updateActiveNav al cargar la página para establecer la sección activa inicial
-  updateActiveNav();
 }
 
-//Deshabilitar el desplazamiento automático en dispositivos móviles
-if (window.innerWidth > 768) {
-  autoScroll();
+function scrollToTopButton() {
+  const scrollToTopBtn = document.getElementById("scroll-to-top");
+
+  // Show or hide the button based on scroll position
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      scrollToTopBtn.style.display = "flex";
+    } else {
+      scrollToTopBtn.style.display = "none";
+    }
+  });
+
+  // Scroll to the Home section when the button is clicked
+  scrollToTopBtn.addEventListener("click", () => {
+    document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+  });
 }
 
 // Inicializa las funciones
 navbar();
 typingEffect();
 openContactModal();
- 
+updateNavbarOnScroll();
+scrollToTopButton();
