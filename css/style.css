@@ -221,7 +221,7 @@ span {
   vertical-align: middle;
   font-size: inherit;
   min-width: 1px;
-  height: 1.2em;
+  height: 1.3em;
   animation: blink-caret 0.75s step-end infinite;
 }
 @keyframes blink-caret {
