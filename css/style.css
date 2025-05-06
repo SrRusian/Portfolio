@@ -532,7 +532,6 @@ span {
 /* ==========================================================
    CONTACT SECTION
    ========================================================== */
-/* Modal Container */
 .contact-modal {
   position: fixed;
   top: 0;
@@ -599,6 +598,170 @@ span {
 .contact-modal-content .btn {
   margin-top: 2rem;
   width: 100%;
+}
+
+/* ==========================================================
+   MY GUIDE SECTION
+   ========================================================== */
+/* My Guide Section */
+.docs {
+  padding: 10rem 5%;
+  background: linear-gradient(135deg, #0a0a0a, #131313);
+  text-align: center;
+}
+
+.docs .heading {
+  font-size: 6rem;
+  margin-bottom: 5rem;
+  color: var(--main-color);
+  text-shadow: 0 0 20px var(--main-color), 0 0 40px var(--main-color);
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 20px var(--main-color), 0 0 40px var(--main-color);
+  }
+  100% {
+    text-shadow: 0 0 30px var(--main-color), 0 0 60px var(--main-color);
+  }
+}
+
+.docs-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: var(--bg-color);
+  border: 3px solid var(--main-color);
+  border-radius: 2rem;
+  box-shadow: 0 0 30px var(--main-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.docs-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 50px var(--main-color);
+}
+
+.docs-text {
+  flex: 1;
+  text-align: left;
+}
+
+.docs-text h3 {
+  font-size: 3rem;
+  color: var(--main-color);
+  margin-bottom: 2rem;
+}
+
+.docs-text p {
+  font-size: 1.6rem;
+  color: #e0e0e0; /* Cambia de #ccc a un gris más claro */
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.docs-text ul {
+  margin: 2rem 0;
+  padding-left: 1.5rem;
+  color: #e0e0e0; /* Cambia de #ccc a un gris más claro */
+  font-size: 1.4rem;
+  line-height: 2;
+}
+
+.docs-text ul li {
+  margin-bottom: 1rem;
+  list-style: none;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.docs-text ul li::before {
+  content: "🧩";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--main-color);
+}
+
+.docs-text .btn-docs {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2.5rem;
+  background-color: var(--main-color);
+  color: black;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.docs-text .btn-docs:hover {
+  background-color: #00fff7;
+  transform: scale(1.05);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7;
+  }
+  100% {
+    box-shadow: 0 0 20px #00fff7, 0 0 40px #00fff7;
+  }
+}
+
+.docs-image {
+  flex: 1;
+  text-align: center;
+}
+
+.docs-image img {
+  max-width: 100%;
+  border-radius: 1rem;
+  border: 3px solid var(--main-color);
+  box-shadow: 0 0 20px var(--main-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.update-tag {
+  color: #888;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .docs-container {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem; /* Aumenta el espacio entre los elementos */
+  }
+
+  .docs-text {
+    text-align: center;
+  }
+
+  .docs-text h3 {
+    text-align: center;
+    margin-bottom: 2rem; /* Agrega espacio debajo del texto */
+  }
+
+  .docs-text p,
+  .docs-text ul {
+    font-size: 1.2rem;
+  }
+
+  .docs-image img {
+    max-width: 90%;
+    margin: 0 auto; /* Centra la imagen */
+  }
 }
 
 /* ==========================================================
