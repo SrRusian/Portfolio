@@ -407,6 +407,93 @@ span {
 }
 
 /* ==========================================================
+   CERTIFICATES SECTION
+   ========================================================== */
+.certificates {
+  padding: 10rem 5%;
+  background: var(--second-bg-color);
+  text-align: center;
+}
+
+.certificates .heading {
+  font-size: 6rem;
+  margin-bottom: 5rem;
+  color: var(--main-color);
+  text-shadow: 0 0 20px var(--main-color);
+}
+
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.certificate-card {
+  background-color: var(--bg-color);
+  border: 3px solid var(--main-color);
+  border-radius: 2rem;
+  box-shadow: 0 0 15px var(--main-color);
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--main-color);
+}
+
+.certificate-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 0 10px var(--main-color);
+}
+
+.certificate-card h3 {
+  color: var(--main-color);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.certificate-card p {
+  color: #ccc;
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-cert {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--main-color);
+  color: black;
+  font-weight: bold;
+  border-radius: 1rem;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-cert:hover {
+  background-color: #00fff7;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .certificates-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+
+  .certificate-card img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================
    PORTFOLIO SECTION
    ========================================================== */
 .portfolio {
