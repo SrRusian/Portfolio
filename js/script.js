@@ -136,9 +136,26 @@ function scrollToTopButton() {
   });
 }
 
+function enableAutoScroll() {
+  const navLinks = document.querySelectorAll(".navbar a");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault(); // Prevent default anchor behavior
+      const targetId = link.getAttribute("href").substring(1); // Get the target section ID
+      const targetSection = document.getElementById(targetId);
+
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: "smooth" }); // Smooth scroll to the section
+      }
+    });
+  });
+}
+
 // Inicializa las funciones
 navbar();
 typingEffect();
 openContactModal();
 updateNavbarOnScroll();
 scrollToTopButton();
+enableAutoScroll();

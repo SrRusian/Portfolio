@@ -363,7 +363,7 @@ span {
   color: black;
 }
 .services h2 {
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
   color: white;
 }
 .services-container {
@@ -390,10 +390,12 @@ span {
   display: flex;
   flex-direction: column;
   text-align: left;
-  max-height: 200px;
+  height: 100px;
+  max-height: none;
   justify-content: left;
   align-items: baseline;
-  padding: 5rem 5rem;
+  padding: 2.5rem;
+  overflow: visible;
 }
 .service-info h4 {
   font-size: 3rem;
@@ -960,9 +962,50 @@ span {
 /* ==========================================================
    MEDIA QUERIES
    ========================================================== */
-@media (max-width: 1285px) {
+
+@media (max-width: 1600px) {
+  #menu-icon {
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 40%;
+    padding: 1rem 3%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom-left-radius: 2rem;
+    border-left: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    display: none;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+  }
+  .navbar.active {
+    display: block;
+    transform: translateX(0);
+  }
+  .navbar a {
+    display: block;
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+    padding: 0.5rem 0;
+    color: white;
+  }
+}
+@media (max-width: 1500px) {
+  .service-box {
+    height: 330px;
+  }
+}
+@media (max-width: 1200px) {
   html {
     font-size: 55%;
+  }
+  .services {
+    padding-bottom: 7rem;
   }
   .services-container {
     padding-bottom: 7rem;
@@ -970,9 +1013,15 @@ span {
     margin: 0 5rem;
   }
 }
-
-/* Pantallas medianas (max-width: 991px) */
-/* Ajustes para Header, Section, Timeline, Services, Testimonials, Contact y Footer */
+@media (max-width: 1109px) {
+  .service-box {
+    height: 390px;
+  }
+  .service-info h4 {
+    padding-top: 10px;
+    font-size: 2.5rem;
+  }
+}
 @media (max-width: 991px) {
   .header {
     padding: 2rem 3%;
@@ -984,32 +1033,24 @@ span {
     left: 7px;
   }
   .timeline-item:nth-child(odd) {
-    padding-right: 0;
+    padding-right: 30px;
     text-align: left;
   }
   .timeline-item:nth-child(odd),
   .timeline-item:nth-child(even) {
+    padding-right: 30px;
     padding-left: 37px;
   }
   .timeline-dot {
-    left: 0;
+    left: 7px;
   }
-  .services {
-    padding-bottom: 7rem;
-  }
-  .testimonials .wrapper {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .contact form {
-    flex-direction: column;
+  .service-info h4 {
+    padding-top: 30px;
   }
   .footer {
     padding: 2rem 3%;
   }
 }
-
-/* Pantallas pequeñas (max-width: 895px) */
-/* Ajustes para Navbar, Home, Services */
 @media (max-width: 895px) {
   #menu-icon {
     display: block;
@@ -1065,8 +1106,30 @@ span {
   .services h2 {
     margin-bottom: 3rem;
   }
+  .service-box {
+    height: 240px;
+  }
+  .service-info h4 {
+    padding-top: 10px;
+  }
   .services-container {
     grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 729px) {
+  .service-box {
+    height: 250px;
+  }
+  .service-info h4 {
+    padding-top: 0px;
+  }
+}
+@media (max-width: 649px) {
+  .service-box {
+    height: 260px;
+  }
+  .service-info h4 {
+    padding-top: 0px;
   }
 }
 
