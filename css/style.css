@@ -484,19 +484,6 @@ span {
   transform: scale(1.05);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .certificates-grid {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
-  }
-
-  .certificate-card img {
-    max-width: 90%;
-    margin: 0 auto;
-  }
-}
-
 /* ==========================================================
    PORTFOLIO SECTION
    ========================================================== */
@@ -577,29 +564,6 @@ span {
   font-size: 1.6rem;
   color: #ccc;
   margin: 0;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .portfolio-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .portfolio-box {
-    width: 100%;
-    max-width: 400px;
-  }
-}
-@media (max-width: 576px) {
-  .portfolio-box {
-    width: 100%;
-    padding: 1.5rem;
-  }
-  .portfolio-item img {
-    width: 50px;
-    height: 50px;
-  }
 }
 
 /* ==========================================================
@@ -740,7 +704,7 @@ span {
 /* My Guide Section */
 .docs {
   padding: 10rem 5%;
-  background: linear-gradient(135deg, #0a0a0a, #131313);
+  background: var(--second-bg-color);
   text-align: center;
 }
 
@@ -870,34 +834,6 @@ span {
   margin-top: 1rem;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .docs-container {
-    flex-direction: column;
-    padding: 2rem;
-    gap: 2rem; /* Aumenta el espacio entre los elementos */
-  }
-
-  .docs-text {
-    text-align: center;
-  }
-
-  .docs-text h3 {
-    text-align: center;
-    margin-bottom: 2rem; /* Agrega espacio debajo del texto */
-  }
-
-  .docs-text p,
-  .docs-text ul {
-    font-size: 1.2rem;
-  }
-
-  .docs-image img {
-    max-width: 90%;
-    margin: 0 auto; /* Centra la imagen */
-  }
-}
-
 /* ==========================================================
    FOOTER
    ========================================================== */
@@ -906,7 +842,7 @@ span {
   bottom: 0;
   width: 100%;
   padding: 40px 0;
-  background-color: var(--second-bg-color);
+  background-color: var(--bg-color);
 }
 .footer .social {
   text-align: center;
@@ -1116,6 +1052,52 @@ span {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+@media (max-width: 768px) {
+  .certificates-grid {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+
+  .certificate-card img {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .portfolio-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .portfolio-box {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .docs-container {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem; /* Aumenta el espacio entre los elementos */
+  }
+
+  .docs-text {
+    text-align: center;
+  }
+
+  .docs-text h3 {
+    text-align: center;
+    margin-bottom: 2rem; /* Agrega espacio debajo del texto */
+  }
+
+  .docs-text p,
+  .docs-text ul {
+    font-size: 1.2rem;
+  }
+
+  .docs-image img {
+    max-width: 90%;
+    margin: 0 auto; /* Centra la imagen */
+  }
+}
 @media (max-width: 729px) {
   .service-box {
     height: 250px;
@@ -1135,6 +1117,16 @@ span {
   }
   .service-info h4 {
     padding-top: 10px;
+  }
+}
+@media (max-width: 576px) {
+  .portfolio-box {
+    width: 100%;
+    padding: 1.5rem;
+  }
+  .portfolio-item img {
+    width: 50px;
+    height: 50px;
   }
 }
 @media (max-width: 495px) {
