@@ -363,8 +363,10 @@ span {
   color: black;
 }
 .services h2 {
-  margin-bottom: 4rem;
   color: white;
+  font-size: 8rem;
+  text-align: center;
+  margin: 3rem 0;
 }
 .services-container {
   display: grid;
@@ -421,9 +423,9 @@ span {
 
 .certificates .heading {
   font-size: 6rem;
-  margin-bottom: 5rem;
-  color: var(--main-color);
-  text-shadow: 0 0 20px var(--main-color);
+  text-align: center;
+  margin: 5rem 0;
+  padding-bottom: 2rem;
 }
 
 .certificates-grid {
@@ -495,9 +497,10 @@ span {
 
 .portfolio .heading {
   font-size: 6rem;
-  margin-bottom: 5rem;
-  color: var(--main-color);
-  text-shadow: 0 0 20px var(--main-color);
+  text-align: center;
+  margin: 5rem 0;
+  color: white;
+  padding-bottom: 2rem;
 }
 
 .portfolio-container {
@@ -511,7 +514,7 @@ span {
   background-color: var(--bg-color);
   border: 3px solid var(--main-color);
   border-radius: 2rem;
-  box-shadow: 0 0 15px var(--main-color);
+  box-shadow: 0 0 10px var(--main-color);
   padding: 2rem;
   width: 350px;
   text-align: left;
@@ -701,7 +704,6 @@ span {
 /* ==========================================================
    MY GUIDE SECTION
    ========================================================== */
-/* My Guide Section */
 .docs {
   padding: 10rem 5%;
   background: var(--second-bg-color);
@@ -710,18 +712,17 @@ span {
 
 .docs .heading {
   font-size: 6rem;
-  margin-bottom: 5rem;
-  color: var(--main-color);
-  text-shadow: 0 0 20px var(--main-color), 0 0 40px var(--main-color);
-  animation: glow 2s infinite alternate;
+  text-align: center;
+  margin: 5rem 0;
+  color: white;
 }
 
 @keyframes glow {
   0% {
-    text-shadow: 0 0 20px var(--main-color), 0 0 40px var(--main-color);
+    text-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color);
   }
   100% {
-    text-shadow: 0 0 30px var(--main-color), 0 0 60px var(--main-color);
+    text-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color);
   }
 }
 
@@ -737,7 +738,7 @@ span {
   background: var(--bg-color);
   border: 3px solid var(--main-color);
   border-radius: 2rem;
-  box-shadow: 0 0 30px var(--main-color);
+  box-shadow: 0 0 20px var(--main-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -776,11 +777,11 @@ span {
   margin-bottom: 1rem;
   list-style: none;
   position: relative;
-  padding-left: 2rem;
+  padding-left: 1rem;
 }
 
 .docs-text ul li::before {
-  content: "🧩";
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -824,7 +825,7 @@ span {
   max-width: 100%;
   border-radius: 1rem;
   border: 3px solid var(--main-color);
-  box-shadow: 0 0 20px var(--main-color);
+  box-shadow: 0 0 10px var(--main-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
