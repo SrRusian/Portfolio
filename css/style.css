@@ -305,7 +305,7 @@ span {
   box-shadow: 0 0 15px var(--main-color);
 }
 .timeline-date {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 800;
   color: #f0f0f0;
   margin: 6px 0 15px;
@@ -1128,8 +1128,49 @@ span {
   .service-box {
     height: 260px;
   }
+}
+@media (max-width: 590px) {
+  .service-box {
+    height: 330px;
+  }
+  .service-info h4 {
+    padding-top: 10px;
+  }
+}
+@media (max-width: 495px) {
+  .service-box {
+    height: 370px;
+  }
+  .service-info h4 {
+    padding-top: 10px;
+  }
+  .heading {
+    font-size: 55px;
+  }
+}
+@media (max-width: 379px) {
+  .service-box {
+    height: 330px;
+  }
   .service-info h4 {
     padding-top: 0px;
+    font-size: 16px;
+  }
+  .service-info p {
+    font-size: 12px;
+  }
+  .heading {
+    font-size: 55px;
+  }
+  .timeline-content p,
+  li {
+    font-size: 12px;
+  }
+  .timeline-content h3 {
+    font-size: 18px;
+  }
+  .heading {
+    font-size: 50px;
   }
 }
 
