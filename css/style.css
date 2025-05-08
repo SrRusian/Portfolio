@@ -486,6 +486,22 @@ span {
   transform: scale(1.05);
 }
 
+.certificate-info {
+  text-align: left;
+  padding: 0 1rem;
+}
+
+.certificate-info p {
+  font-size: 1.3rem;
+  margin-bottom: 0.6rem;
+  color: #bbb;
+}
+
+.certificate-info p strong {
+  color: var(--main-color);
+  font-weight: 600;
+}
+
 /* ==========================================================
    PORTFOLIO SECTION
    ========================================================== */
