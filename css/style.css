@@ -585,6 +585,16 @@ span {
   margin: 0;
 }
 
+.portfolio-item h4 a {
+  color: inherit; /* Inherit text color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease;
+}
+
+.portfolio-item h4 a:hover {
+  color: var(--main-color); /* Highlight on hover */
+}
+
 /* ==========================================================
    TESTIMONIALS SECTION
    ========================================================== */
