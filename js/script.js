@@ -152,6 +152,29 @@ function enableAutoScroll() {
   });
 }
 
+function revealOnScroll() {
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        // entry.intersectionRatio va de 0 (no visible) a 1 (totalmente visible)
+        entry.target.style.opacity = entry.intersectionRatio;
+        entry.target.style.transform = `translateY(${40 * (1 - entry.intersectionRatio)}px)`;
+        if (entry.intersectionRatio > 0.05) {
+          entry.target.classList.add('active');
+        } else {
+          entry.target.classList.remove('active');
+        }
+      });
+    },
+    {
+      threshold: Array.from({ length: 201 }, (_, i) => i * 0.005), // [0, 0.005, ..., 1]
+    }
+  );
+  reveals.forEach((el) => observer.observe(el));
+}
+window.addEventListener('DOMContentLoaded', revealOnScroll);
+
 // Inicializa las funciones
 navbar();
 typingEffect();
@@ -159,3 +182,4 @@ openContactModal();
 updateNavbarOnScroll();
 scrollToTopButton();
 enableAutoScroll();
+revealOnScroll();
