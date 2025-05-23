@@ -1,76 +1,73 @@
+# Emmanuel Camacho — Professional Portfolio
 
-# Emmanuel Camacho — Portafolio Profesional
-
-¡Bienvenido a mi espacio profesional en GitHub!  
-Soy un desarrollador backend con una fuerte orientación hacia la **ciberseguridad ofensiva** y la **seguridad de aplicaciones web**.
-
----
-
-## 📄 Sobre mí
-
-Actualmente me encuentro en formación activa como pentester, especializándome en **análisis de vulnerabilidades**, **explotación de aplicaciones web** y **seguridad en APIs**.  
-Tengo experiencia realizando **pruebas de seguridad manuales** y **automatizadas**, participando en auditorías técnicas que incluyen:
-
-- Inyección SQL (SQLi)
-- Cross-Site Scripting (XSS) reflejado, almacenado y basado en DOM
-- Vulnerabilidades IDOR (Insecure Direct Object References)
-- Ataques a tokens JWT (algoritmos inseguros, JKU, JWK, kid path traversal)
-- Explotación de XXE para SSRF
-- Exfiltración de datos mediante vulnerabilidades OAST (out-of-band)
-
-Me apasiona investigar, practicar en entornos reales y desarrollar proyectos que refuercen la seguridad en el ciclo de vida del software.
+Welcome to my professional space on GitHub!
+I’m a backend developer with a strong focus on **offensive cybersecurity** and **web application security**.
 
 ---
 
-## 💼 Proyectos destacados
+## 📄 About Me
 
-- **[Portafolio Personal Web](https://srrusian.github.io/Portfolio/)** — Sitio personal con proyectos y habilidades destacados.
-- **Repositorio de Notas de Pentesting (próximamente)** — Recopilación de técnicas, laboratorios resueltos y cheatsheets de seguridad ofensiva.
+I’m currently undergoing active training as a pentester, specializing in **vulnerability analysis**, **web application exploitation**, and **API security**.
+I have experience performing both **manual and automated security testing**, contributing to technical audits that include:
 
----
+* SQL Injection (SQLi)
+* Cross-Site Scripting (XSS) — reflected, stored, and DOM-based
+* IDOR vulnerabilities (Insecure Direct Object References)
+* JWT attacks (weak algorithms, JKU, JWK, `kid` path traversal)
+* XXE exploitation leading to SSRF
+* Data exfiltration via OAST (out-of-band vulnerabilities)
 
-## 🛠️ Tecnologías y Herramientas
-
-- **Lenguajes y Scripting:** Bash, SQL
-- **Sistemas Operativos:** Kali Linux, Windows Server
-- **Herramientas de Seguridad:**  
-  - Burp Suite (Intruder, Repeater, Collaborator)
-  - Metasploit Framework
-  - Nmap (network mapping y escaneo de vulnerabilidades)
-  - Wireshark (análisis de tráfico de red)
-- **Control de versiones:** Git, GitHub
-- **Automatización de Pruebas:** Postman, Newman
+I’m passionate about research, hands-on practice in real environments, and building projects that enhance security throughout the software development lifecycle.
 
 ---
 
-## 🎯 Objetivos Profesionales
+## 💼 Highlighted Projects
 
-- Obtener certificaciones reconocidas: **OSCP**, **eJPT**, y **PNPT**.
-- Participar regularmente en **CTFs** (Capture The Flag) en plataformas como **HackTheBox** y **TryHackMe**.
-- Fortalecer habilidades de pentesting real en entornos de producción.
-- Contribuir a proyectos de **open-source** relacionados con seguridad.
+* **[Personal Web Portfolio](https://srrusian.github.io/Portfolio/)** — Personal website showcasing key projects and skills.
+* **Pentesting Notes Repository (coming soon)** — A collection of techniques, solved labs, and offensive security cheatsheets.
 
 ---
 
-## 📫 Contacto
+## 🛠️ Technologies and Tools
 
-- 📧 **Correo:** [srremmanuelm@gmail.com](mailto:srremmanuelm@gmail.com)
-- 🔗 **LinkedIn:** [Mi perfil de LinkedIn](https://www.linkedin.com/in/srrusian)
-- 🐙 **GitHub:** [@SrRusian](https://github.com/SrRusian)
+* **Languages & Scripting:** Bash, SQL
+* **Operating Systems:** Kali Linux, Windows Server
+* **Security Tools:**
 
----
-
-## 📌 Áreas de especialización en ciberseguridad
-
-- Seguridad de Aplicaciones Web (OWASP Top 10)
-- Análisis y auditoría de APIs REST
-- Explotación de vulnerabilidades de configuración
-- Automatización de pruebas de seguridad
-- Redacción de reportes técnicos de hallazgos de vulnerabilidades
+  * Burp Suite (Intruder, Repeater, Collaborator)
+  * Metasploit Framework
+  * Nmap (network mapping and vulnerability scanning)
+  * Wireshark (network traffic analysis)
+* **Version Control:** Git, GitHub
+* **Testing Automation:** Postman, Newman
 
 ---
 
-# 🚀 ¡Gracias por visitar mi portafolio!
+## 🎯 Career Goals
+
+* Earn industry-recognized certifications: **OSCP**, **eJPT**, and **PNPT**
+* Regularly participate in **Capture The Flag (CTF)** competitions on platforms like **HackTheBox** and **TryHackMe**
+* Strengthen real-world pentesting skills in production environments
+* Contribute to **open-source** security-related projects
 
 ---
 
+## 📫 Contact
+
+* 📧 **Email:** [srremmanuelm@gmail.com](mailto:srremmanuelm@gmail.com)
+* 🔗 **LinkedIn:** [My LinkedIn Profile](https://www.linkedin.com/in/srrusian)
+* 🐙 **GitHub:** [@SrRusian](https://github.com/SrRusian)
+
+---
+
+## 📌 Cybersecurity Specializations
+
+* Web Application Security (OWASP Top 10)
+* REST API analysis and auditing
+* Exploitation of misconfiguration vulnerabilities
+* Security test automation
+* Technical reporting of vulnerability findings
+
+---
+
+# 🚀 Thank You for Visiting My Portfolio!
