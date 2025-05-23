@@ -182,4 +182,3 @@ openContactModal();
 updateNavbarOnScroll();
 scrollToTopButton();
 enableAutoScroll();
-revealOnScroll();

@@ -66,11 +66,7 @@ body {
   font-size: 3rem;
   color: var(--text-color);
   font-weight: 800;
-  cursor: pointer;
   transition: 0.3s ease;
-}
-.logo:hover {
-  transform: scale(1.1);
 }
 .logo span {
   text-shadow: 0 0 25px var(--main-color);
@@ -164,12 +160,7 @@ span {
   width: 32vw;
   border-radius: 50%;
   box-shadow: 0 0 25px var(--main-color);
-  cursor: pointer;
   transition: 0.4s ease-in-out;
-}
-.home-img img:hover {
-  box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color),
-    0 0 100px var(--main-color);
 }
 .home-content p {
   font-size: 1.5rem;
@@ -259,7 +250,7 @@ span {
   vertical-align: middle;
   font-size: inherit;
   min-width: 1px;
-  height: 1.4em;
+  height: 1.3em;
   animation: blink-caret 0.75s step-end infinite;
 }
 @keyframes blink-caret {
@@ -303,7 +294,7 @@ span {
   transform: translateY(20px);
   animation: fadeInUp 0.6s ease forwards;
   animation-delay: calc(var(--i) * 0.2s);
-  margin-bottom: 60px;
+  margin-bottom: 20px;
 }
 .timeline-item:nth-child(odd) {
   padding-right: calc(50% + 30px);
@@ -346,12 +337,8 @@ span {
   border: 3px solid var(--main-color);
   padding: 30px 40px;
   border-radius: 3rem;
-  box-shadow: 0 0 10px var(--main-color);
+  box-shadow: 0 0 20px var(--main-color);
   transition: 0.3s ease-in-out;
-}
-.timeline-content:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px var(--main-color);
 }
 .timeline-content h3 {
   font-size: 22px;
@@ -410,22 +397,14 @@ span {
   height: 300px;
   border-radius: 3rem;
   border: 5px solid transparent;
-  cursor: pointer;
   transition: 0.4s ease-in-out;
-}
-.service-box:hover {
-  background: white;
-  color: black;
-  border: 5px solid var(--main-color);
-  transform: scale(1.03);
 }
 .service-box .service-info {
   display: flex;
   flex-direction: column;
-  text-align: left;
+  text-align: justify;
   height: 100px;
   max-height: none;
-  justify-content: left;
   align-items: baseline;
   padding: 2.5rem;
   overflow: visible;
@@ -434,6 +413,7 @@ span {
   font-size: 3rem;
   font-weight: 800;
   line-height: 2;
+  text-align: center;
 }
 .service-info {
   font-size: 1.6rem;
@@ -553,7 +533,7 @@ span {
 .portfolio-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 4rem;
   justify-content: center;
 }
 
@@ -798,13 +778,13 @@ span {
 
 .docs-text {
   flex: 1;
-  text-align: left;
 }
 
 .docs-text h3 {
   font-size: 3rem;
   color: var(--main-color);
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 .docs-text p {
