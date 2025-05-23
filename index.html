@@ -13,35 +13,41 @@
   <body>
     <header class="header">
       <a class="logo">Emmanuel <span>Camacho</span></a>
-
       <i class="bx bx-menu" id="menu-icon"></i>
-
       <nav class="navbar" aria-label="Main Navigation">
-        <a href="#home" class="active" aria-current="page">Home</a>
-        <a href="#education">Professional Development</a>
-        <a href="#services">Services</a>
-        <a href="#certificates">Certifications</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#docs">My Guide</a>
+        <a href="#home" class="active" aria-current="page" data-i18n="nav_home"
+          >Home</a
+        >
+        <a href="#education" data-i18n="nav_education"
+          >Professional Development</a
+        >
+        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#certificates" data-i18n="nav_certificates">Certifications</a>
+        <a href="#portfolio" data-i18n="nav_portfolio">Portfolio</a>
+        <a href="#docs" data-i18n="nav_docs">My Guide</a>
       </nav>
+      <div class="lang-switcher">
+        <button id="lang-en" class="lang-btn active">EN</button>
+        <button id="lang-es" class="lang-btn">ES</button>
+      </div>
     </header>
 
     <section class="home" id="home">
       <div class="home-content">
-        <h1>Hi, I'm <span>Emmanuel</span></h1>
+        <h1 data-i18n="home_title">Hi, I'm <span>Emmanuel</span></h1>
         <h3 class="text-animation">I'm <span id="typing-text"></span></h3>
-        <p>
+        <p data-i18n="home_p1">
           Hello! I'm <strong>Emmanuel Camacho</strong>, passionate about
           <strong>offensive cybersecurity</strong> and
           <strong>secure backend development</strong>.
         </p>
-        <p>
+        <p data-i18n="home_p2">
           I am currently in a stage of
           <strong>continuous learning</strong>, deeply exploring the world of
           ethical hacking, penetration testing, and automation of tools for
           Linux environments.
         </p>
-        <p>
+        <p data-i18n="home_p3">
           I specialize in vulnerability analysis, designing custom solutions,
           and implementing security best practices. Although I am still
           expanding my knowledge in this vast field, every day I strengthen my
@@ -51,7 +57,7 @@
           >.
         </p>
 
-        <p style="font-style: italic; color: #00ffff">
+        <p style="font-style: italic; color: #00ffff" data-i18n="home_phrase">
           🔒 “My goal is to create more secure systems through a deep
           understanding of their flaws.”
         </p>
@@ -95,20 +101,40 @@
         </div>
 
         <div class="btn-group">
-          <a href="#" class="btn" id="open-contact">CONTACT</a>
+          <a href="#" class="btn" id="open-contact" data-i18n="contact_button"
+            >CONTACT</a
+          >
         </div>
         <div class="contact-modal" id="contact-modal">
           <div class="contact-modal-content">
-            <h2 class="heading">Contact <span>Me</span></h2>
+            <h2 class="heading" data-i18n="contact_header">
+              Contact <span>Me</span>
+            </h2>
             <form action="">
               <div class="input-group">
                 <div class="input-box">
-                  <input type="text" placeholder="Full Name" />
-                  <input type="email" placeholder="Email" />
+                  <input
+                    type="text"
+                    data-i18n-placeholder="input_name"
+                    placeholder="Full Name"
+                  />
+                  <input
+                    type="email"
+                    data-i18n-placeholder="input_email"
+                    placeholder="Email"
+                  />
                 </div>
                 <div class="input-box">
-                  <input type="number" placeholder="Phone Number" />
-                  <input type="text" placeholder="Subject" />
+                  <input
+                    type="number"
+                    data-i18n-placeholder="input_phone"
+                    placeholder="Phone Number"
+                  />
+                  <input
+                    type="text"
+                    data-i18n-placeholder="input_subject"
+                    placeholder="Subject"
+                  />
                 </div>
               </div>
               <div class="input-group-2">
@@ -117,9 +143,15 @@
                   id=""
                   cols="30"
                   rows="10"
+                  data-i18n-placeholder="input_message"
                   placeholder="Your Message"
                 ></textarea>
-                <input type="submit" value="Send Message" class="btn" />
+                <input
+                  type="submit"
+                  data-i18n_button="contact_button"
+                  value="Send Message"
+                  class="btn"
+                />
               </div>
             </form>
             <button class="close-modal" id="close-contact">X</button>
@@ -133,28 +165,34 @@
     </section>
 
     <section class="education" id="education">
-      <h2 class="heading reveal">Professional Development</h2>
+      <h2 class="heading reveal" data-i18n="education_header">
+        Professional Development
+      </h2>
       <div class="timeline-items" style="--i: 1">
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-date">2021</div>
           <div class="timeline-content">
-            <h3>UNIVERSITY OF COLIMA (SOFTWARE ENGINEERING)</h3>
-            <p>
+            <h3 data-i18n="education_t1">
+              UNIVERSITY OF COLIMA (SOFTWARE ENGINEERING)
+            </h3>
+            <p data-i18n="education_p1">
               Currently in the final stage of my degree, focused on backend
               development and agile methodologies. Throughout my studies, I have
               gained practical experience in Linux environments, relational
               databases (MySQL and PostgreSQL), Docker containers, and web
               development fundamentals with HTML, CSS, and JavaScript.
             </p>
-            <p>
+            <p data-i18n="education_p2">
               I have also worked with tools such as basic Node.js, and game
               development engines like Unity and Godot. My education includes
               solid knowledge of software development life cycles,
               object-oriented programming, digital systems, and software
               engineering principles.
             </p>
-            <p><em>(Estimated graduation: July 2025)</em></p>
+            <p data-i18n="education_p3">
+              <em>(Estimated graduation: July 2025)</em>
+            </p>
           </div>
         </div>
 
@@ -162,12 +200,14 @@
           <div class="timeline-dot"></div>
           <div class="timeline-date">2024</div>
           <div class="timeline-content">
-            <h3>Self-taught Entry into Cybersecurity</h3>
-            <p>
+            <h3 data-i18n="education_t2">
+              Self-taught Entry into Cybersecurity
+            </h3>
+            <p data-i18n="education_p4">
               <strong>Focus:</strong> ethical hacking, OWASP vulnerability
               testing, and pentesting in controlled environments.
             </p>
-            <ul>
+            <ul data-i18n="education_p5">
               <li>Platforms: HackTheBox, TryHackMe, PortSwigger Labs.</li>
               <li>Tools: Burp Suite, Nmap, SQLmap, Linux.</li>
               <li>
@@ -182,12 +222,14 @@
           <div class="timeline-dot"></div>
           <div class="timeline-date">2024</div>
           <div class="timeline-content">
-            <h3>Social Service - Distance Education Directorate (EDUC)</h3>
-            <p>
+            <h3 data-i18n="education_t3">
+              Social Service - Distance Education Directorate (EDUC)
+            </h3>
+            <p data-i18n="education_p6">
               <strong>Role:</strong> Applied IT security for an educational
               platform.
             </p>
-            <ul>
+            <ul data-i18n="education_p7">
               <li>Technical audits of EDUC functionalities.</li>
               <li>Vulnerability testing: XSS, IDOR, misconfigured JWT.</li>
               <li>Use of Burp Suite, Postman, OWASP Testing Guide.</li>
@@ -199,14 +241,14 @@
           <div class="timeline-dot"></div>
           <div class="timeline-date">2025</div>
           <div class="timeline-content">
-            <h3>
+            <h3 data-i18n="education_t4">
               Professional Internship – Distance Education Directorate (EDUC)
             </h3>
-            <p>
+            <p data-i18n="education_p8">
               <strong>Role:</strong> Cybersecurity analysis and testing on the
               EDUC platform.
             </p>
-            <ul>
+            <ul data-i18n="education_p9">
               <li>Technical audits of APIs and critical functionalities.</li>
               <li>Vulnerability testing: SQL Injection, IDOR, XSS, JWT.</li>
               <li>
@@ -223,13 +265,13 @@
     </section>
 
     <section class="services" id="services">
-      <h2 class="heading reveal">Services</h2>
+      <h2 class="heading reveal" data-i18n="services_header">Services</h2>
 
       <div class="services-container">
         <div class="service-box reveal" style="--delay: 0.1s">
           <div class="service-info">
-            <h4>🔐 Ethical Hacker</h4>
-            <p>
+            <h4 data-i18n="services_h1">🔐 Ethical Hacker</h4>
+            <p data-i18n="services_p1">
               Identification and exploitation of vulnerabilities in controlled
               environments, with proficiency in tools such as Burp Suite, Nmap,
               SQLmap, and Dirb. Hands-on experience on platforms like TryHackMe,
@@ -242,8 +284,8 @@
 
         <div class="service-box reveal" style="--delay: 0.2s">
           <div class="service-info">
-            <h4>🧪 Software Tester</h4>
-            <p>
+            <h4 data-i18n="services_h2">🧪 Software Tester</h4>
+            <p data-i18n="services_p2">
               Execution of manual and semi-automated tests on APIs and web
               platforms. Use of Postman and Newman for functional, regression,
               and basic security validation. Test design based on critical
@@ -256,8 +298,8 @@
 
         <div class="service-box reveal" style="--delay: 0.3s">
           <div class="service-info">
-            <h4>🛠 Backend Developer</h4>
-            <p>
+            <h4 data-i18n="services_h3">🛠 Backend Developer</h4>
+            <p data-i18n="services_p3">
               Development of REST APIs using Node.js, management of relational
               databases (MySQL, PostgreSQL), and backend security principles.
               Familiar with token-based authentication, access control, and
@@ -270,8 +312,8 @@
 
         <div class="service-box reveal" style="--delay: 0.4s">
           <div class="service-info">
-            <h4>🔧 Other</h4>
-            <p>
+            <h4 data-i18n="services_h4">🔧 Other</h4>
+            <p data-i18n="services_p4">
               Knowledge in HTML, CSS, JS, responsive design, and semantic
               structure. Basic experience in Linux systems, bash commands, and
               local server management. Game development in Unity and Godot as
@@ -284,21 +326,28 @@
     </section>
 
     <section class="certificates" id="certificates">
-      <h2 class="heading reveal">🎓 Certifications & Awards</h2>
+      <h2 class="heading reveal" data-i18n="certifications_header">
+        🎓 Certifications & Awards
+      </h2>
       <div class="certificates-grid">
         <div class="certificate-card reveal">
           <img
             src="src/certifications/certificadoTerrabyteAcademyAPIsHacking2025-02-05.png"
             alt="Certificado Terrabyte Academy"
           />
-          <h3>API Hacking</h3>
-          <p><strong>Issued by:</strong> Terrabyte Academy</p>
-          <p><strong>Date:</strong> February 5, 2025</p>
-          <p><strong>ID:</strong> oo8tkfs57d</p>
+          <h3 data-i18n="certificate_t1">API Hacking</h3>
+          <p data-i18n="certificate_i1">
+            <strong>Issued by:</strong> Terrabyte Academy
+          </p>
+          <p data-i18n="certificate_d1">
+            <strong>Date:</strong> February 5, 2025
+          </p>
+          <p data-i18n="certificate_id1"><strong>ID:</strong> oo8tkfs57d</p>
           <a
             href="src/certifications/certificadoTerrabyteAcademyAPIsHacking2025-02-05.pdf"
             target="_blank"
             class="btn-cert"
+            data-i18n="certificate_btn1"
             >View Certificate</a
           >
         </div>
@@ -307,14 +356,19 @@
             src="src/certifications/diplomaTecnologiasEmergentes2024.png"
             alt="Certificado Santander Open Academy"
           />
-          <h3>Introduction to Emerging Technologies</h3>
-          <p><strong>Issued by:</strong> Santander Open Academy</p>
-          <p><strong>Date:</strong> July 31, 2024</p>
-          <p><strong>ID:</strong> 1t8njtssid</p>
+          <h3 data-i18n="certificate_t2">
+            Introduction to Emerging Technologies
+          </h3>
+          <p data-i18n="certificate_i2">
+            <strong>Issued by:</strong> Santander Open Academy
+          </p>
+          <p data-i18n="certificate_d2"><strong>Date:</strong> July 31, 2024</p>
+          <p data-i18n="certificate_id2"><strong>ID:</strong> 1t8njtssid</p>
           <a
             href="src/certifications/diplomaTecnologiasEmergentes2024.pdf"
             target="_blank"
             class="btn-cert"
+            data-i18n="certificate_btn2"
             >View Certificate</a
           >
         </div>
@@ -386,11 +440,11 @@
     -->
 
     <section class="portfolio" id="portfolio">
-      <h2 class="heading reveal">Portfolio</h2>
+      <h2 class="heading reveal" data-i18n="portfolio_header">Portfolio</h2>
       <div class="portfolio-container">
         <!-- Projects Section -->
         <div class="portfolio-box reveal">
-          <h3>📁 Projects</h3>
+          <h3 data-i18n="projects_header">📁 Projects</h3>
           <div class="portfolio-preview">
             <div class="portfolio-item">
               <img src="src/calculatorIcon.png" alt="Calculator 2.0" />
@@ -436,7 +490,7 @@
 
         <!-- Labs Section -->
         <div class="portfolio-box reveal">
-          <h3>🧪 Labs</h3>
+          <h3 data-i18n="labs_header">🧪 Labs</h3>
           <div class="portfolio-preview">
             <div class="portfolio-item">
               <img
@@ -488,7 +542,7 @@
 
         <!-- Scripts Section -->
         <div class="portfolio-box reveal">
-          <h3>💻 Scripts</h3>
+          <h3 data-i18n="scripts_header">💻 Scripts</h3>
           <div class="portfolio-preview">
             <div class="portfolio-item">
               <img src="src/customSetup.jpg" alt="My Custom Kali Setup" />
@@ -532,16 +586,16 @@
     </section>
 
     <section class="docs" id="docs">
-      <h2 class="heading reveal">My Guide</h2>
+      <h2 class="heading reveal" data-i18n="docs_header">My Guide</h2>
       <div class="docs-container reveal">
         <div class="docs-text">
-          <h3>Knowledge Repository</h3>
-          <p>
+          <h3 data-i18n="doc_title">Knowledge Repository</h3>
+          <p data-i18n="doc_description">
             Personal technical documentation on offensive cybersecurity,
             analysis tools, Linux commands, OWASP Top 10, testing in controlled
             environments, and more.
           </p>
-          <ul class="guide-list">
+          <ul class="guide-list" data-i18n="doc_list">
             <li>🛡️ Pentesting in APIs and web</li>
             <li>🔧 Tools: Burp, ZAP, Metasploit</li>
             <li>🧪 Practical labs</li>
@@ -552,9 +606,12 @@
           <a
             href="https://srrusian.github.io/My_Knowledge_Base/"
             class="btn-docs"
+            data-i18n="doc_btn"
             >View Full Guide</a
           >
-          <p class="update-tag">📅 Last updated: May 2025</p>
+          <p class="update-tag" data-i18n="doc_updated">
+            📅 Last updated: May 2025
+          </p>
         </div>
         <div class="docs-image">
           <img src="src/myGuidePreview.png" alt="Knowledge Base" />
@@ -601,11 +658,14 @@
         </a>
       </div>
 
-      <p class="copyright">© Emmanuel Camacho | All Rights Reserved</p>
+      <p class="copyright" data-i18n="copyright">
+        © Emmanuel Camacho | All Rights Reserved
+      </p>
     </footer>
 
     <button id="scroll-to-top" class="scroll-to-top">↑</button>
 
+    <script src="js/lang.js"></script>
     <script src="js/script.js"></script>
     <script defer src="https://friconix.com/cdn/friconix.js"></script>
   </body>
