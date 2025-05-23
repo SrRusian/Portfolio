@@ -5,7 +5,7 @@ const translations = {
     nav_services: "Services",
     nav_certificates: "Certifications",
     nav_portfolio: "Portfolio",
-    nav_docs: "My Guide",
+    nav_docs: "Docs",
     home_title: "Hi, I'm <span>Emmanuel</span>",
     home_p1: "Hello! I'm <strong>Emmanuel Camacho</strong>, passionate about <strong>offensive cybersecurity</strong> and <strong>secure backend development</strong>.",
     home_p2: "I am currently in a stage of <strong>continuous learning</strong>, deeply exploring the world of ethical hacking, penetration testing, and automation of tools for Linux environments.",
@@ -56,7 +56,7 @@ const translations = {
     projects_header: "Projects",
     labs_header: "Labs",
     scripts_header: "Scripts",
-    docs_header: "My Guide",
+    docs_header: "My Documents",
     doc_title: "Knowledge Repository",
     doc_description: "Personal technical documentation on offensive cybersecurity, analysis tools, Linux commands, OWASP Top 10, testing in controlled environments, and more.",
     doc_list: "<li>🛡️ Pentesting in APIs and web</li> <li>🔧 Tools: Burp, ZAP, Metasploit</li> <li>🧪 Practical labs</li> <li>💻 Essential Linux commands</li> <li>📚 OWASP Top 10 explained</li> <li>🔍 Analysis of common vulnerabilities</li>",
@@ -71,7 +71,7 @@ const translations = {
     nav_services: "Servicios",
     nav_certificates: "Certificaciones",
     nav_portfolio: "Portafolio",
-    nav_docs: "Mi Guía",
+    nav_docs: "Docs",
     home_title: "Hola, soy <span>Emmanuel</span>",
     home_p1: "¡Hola! Soy <strong>Emmanuel Camacho</strong>, apasionado por <strong>la ciberseguridad ofensiva</strong> y <strong>el desarrollo seguro de backend</strong>.",
     home_p2: "Actualmente me encuentro en una etapa de <strong>aprendizaje continuo</strong>, explorando a fondo el mundo del hacking ético, las pruebas de penetración y la automatización de herramientas para entornos Linux.",
@@ -122,7 +122,7 @@ const translations = {
     projects_header: "Proyectos",
     labs_header: "Laboratorios",
     scripts_header: "Scripts",
-    docs_header: "Mi Guía",
+    docs_header: "Mis Documentos",
     doc_title: "Repositorio de Conocimientos",
     doc_description: "Documentación técnica personal sobre ciberseguridad ofensiva, herramientas de análisis, comandos de Linux, OWASP Top 10, pruebas en entornos controlados y más.",
     doc_list: "<li>🛡️ Pentesting en APIs y web</li> <li>🔧 Herramientas: Burp, ZAP, Metasploit</li> <li>🧪 Laboratorios prácticos</li> <li>💻 Comandos esenciales de Linux</li> <li>📚 OWASP Top 10 explicado</li> <li>🔍 Análisis de vulnerabilidades comunes</li>",
@@ -134,34 +134,46 @@ const translations = {
 };
 
 function setLanguage(lang) {
-  if (localStorage.getItem("lang") === lang) return; // Ya está seleccionado
-  // Para futura animación de transición, puedes envolver este bloque en una animación
+  document.documentElement.lang = lang;
+
+  // Traduce textos con data-i18n
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     if (translations[lang][key]) {
       el.innerHTML = translations[lang][key];
     }
   });
+
+  // Traduce placeholders
   document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
     const key = el.getAttribute("data-i18n-placeholder");
     if (translations[lang][key]) {
       el.placeholder = translations[lang][key];
     }
   });
-  // Cambia el botón activo
+
+  // Traduce botones input con data-i18n_button (si usas)
+  document.querySelectorAll("[data-i18n_button]").forEach(el => {
+    const key = el.getAttribute("data-i18n_button");
+    if (translations[lang][key]) {
+      el.value = translations[lang][key];
+    }
+  });
+
+  // Actualiza el estado visual de los botones de idioma
   document.querySelectorAll(".lang-btn").forEach(btn => btn.classList.remove("active"));
-  document.getElementById(`lang-${lang}`).classList.add("active");
-  // Guarda preferencia en localStorage
+  const btn = document.getElementById(`lang-${lang}`);
+  if (btn) btn.classList.add("active");
+
+  // Guarda preferencia
   localStorage.setItem("lang", lang);
 }
 
 // Eventos para los botones de idioma
 const btnEn = document.getElementById("lang-en");
 const btnEs = document.getElementById("lang-es");
-if (btnEn && btnEs) {
-  btnEn.addEventListener("click", () => setLanguage("en"));
-  btnEs.addEventListener("click", () => setLanguage("es"));
-}
+if (btnEn) btnEn.addEventListener("click", () => setLanguage("en"));
+if (btnEs) btnEs.addEventListener("click", () => setLanguage("es"));
 
 // Al cargar la página, usa el idioma guardado o el del navegador
 window.addEventListener("DOMContentLoaded", () => {

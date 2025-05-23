@@ -54,7 +54,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 4rem 12% 4rem;
+  padding: 4rem 8% 4rem;
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
   display: flex;
@@ -95,11 +95,15 @@ section {
   padding: 10rem 12% 10rem;
 }
 
-/* ...existing code... */
+.navbar {
+  display: flex;
+  align-items: center;
+}
 .lang-switcher {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
-  margin-left: 2rem;
+  margin-left: 8rem;
 }
 .lang-btn {
   background: transparent;
@@ -932,33 +936,63 @@ span {
 @media (max-width: 1600px) {
   #menu-icon {
     display: block;
+    z-index: 200;
+    cursor: pointer;
+    transition: color 0.2s;
   }
   .navbar {
     position: absolute;
     top: 100%;
-    right: 0;
-    width: 40%;
-    padding: 1rem 3%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(20px);
-    border-bottom-left-radius: 2rem;
-    border-left: 2px solid var(--main-color);
-    border-bottom: 2px solid var(--main-color);
+    right: 2%;
+    width: 350px;
+    max-width: 90vw;
+    padding: 2.5rem 2rem 2.5rem 2rem;
+    background: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(12px);
+    border-radius: 1.5rem;
+    border: 2px solid var(--main-color);
     display: none;
     flex-direction: column;
-    transition: transform 0.3s ease-in-out;
+    align-items: stretch;
+    box-shadow: 0 0 30px var(--main-color);
+    z-index: 150;
+    transition: transform 0.3s cubic-bezier(0.77, 0, 0.18, 1);
     transform: translateX(100%);
   }
   .navbar.active {
-    display: block;
+    display: flex;
     transform: translateX(0);
   }
   .navbar a {
     display: block;
-    font-size: 1.8rem;
-    margin: 1.5rem 0;
-    padding: 0.5rem 0;
-    color: white;
+    font-size: 2rem;
+    margin: 1.2rem 0;
+    padding: 1rem 0 1rem 0.5rem;
+    color: var(--text-color);
+    border-bottom: 1px solid rgba(0, 255, 238, 0.12);
+    border-radius: 0.5rem;
+    text-align: left;
+    transition: background 0.2s, color 0.2s;
+  }
+  .navbar a:last-child {
+    border-bottom: none;
+  }
+  .navbar a:hover,
+  .navbar a.active {
+    background: rgba(0, 255, 238, 0.08);
+    color: var(--main-color);
+  }
+  .lang-switcher {
+    margin: 2rem 0 0 0;
+    justify-content: flex-start;
+    gap: 1.2rem;
+  }
+  .lang-btn {
+    font-size: 1.5rem;
+    padding: 0.7rem 2.2rem;
+    border-radius: 1.5rem;
+    border-width: 2px;
+    margin: 0;
   }
 }
 @media (max-width: 1500px) {
@@ -1024,35 +1058,24 @@ span {
   }
 }
 @media (max-width: 895px) {
-  #menu-icon {
-    display: block;
-  }
   .navbar {
-    position: absolute;
-    top: 100%;
     right: 0;
-    width: 40%;
-    padding: 1rem 3%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(20px);
-    border-bottom-left-radius: 2rem;
-    border-left: 2px solid var(--main-color);
-    border-bottom: 2px solid var(--main-color);
-    display: none;
-    flex-direction: column;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(100%);
-  }
-  .navbar.active {
-    display: block;
-    transform: translateX(0);
+    width: 95vw;
+    max-width: 99vw;
+    padding: 2rem 1rem 2rem 1rem;
   }
   .navbar a {
-    display: block;
-    font-size: 1.8rem;
-    margin: 1.5rem 0;
-    padding: 0.5rem 0;
-    color: white;
+    font-size: 1.7rem;
+    margin: 1rem 0;
+    padding: 1rem 0 1rem 0.5rem;
+  }
+  .lang-switcher {
+    margin: 2rem 0 0 0;
+    gap: 1rem;
+  }
+  .lang-btn {
+    font-size: 1.3rem;
+    padding: 0.6rem 1.5rem;
   }
   .home {
     flex-direction: column-reverse;
