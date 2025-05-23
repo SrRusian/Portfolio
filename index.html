@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
     <header class="header">
       <a class="logo">Emmanuel <span>Camacho</span></a>
@@ -110,41 +111,51 @@
             <h2 class="heading" data-i18n="contact_header">
               Contact <span>Me</span>
             </h2>
-            <form action="">
+            <form id="contact-form">
               <div class="input-group">
                 <div class="input-box">
                   <input
                     type="text"
+                    name="name"
                     data-i18n-placeholder="input_name"
                     placeholder="Full Name"
+                    required
                   />
                   <input
                     type="email"
+                    name="email"
                     data-i18n-placeholder="input_email"
                     placeholder="Email"
+                    required
                   />
                 </div>
                 <div class="input-box">
                   <input
-                    type="number"
+                    type="tel"
+                    name="phone"
                     data-i18n-placeholder="input_phone"
                     placeholder="Phone Number"
+                    pattern="^\+\d{1,4}\d{10,14}$"
+                    title="Include the international area code, for example: +52 1234567890"
+                    maxlength="18"
                   />
                   <input
                     type="text"
+                    name="title"
                     data-i18n-placeholder="input_subject"
                     placeholder="Subject"
+                    required
                   />
                 </div>
               </div>
               <div class="input-group-2">
                 <textarea
-                  name=""
-                  id=""
+                  name="message"
                   cols="30"
                   rows="10"
                   data-i18n-placeholder="input_message"
                   placeholder="Your Message"
+                  required
                 ></textarea>
                 <input
                   type="submit"
@@ -667,6 +678,8 @@
 
     <script src="js/lang.js"></script>
     <script src="js/script.js"></script>
-    <script defer src="https://friconix.com/cdn/friconix.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="js/contact.js"></script>
+    <div id="toast" class="toast"></div>
   </body>
 </html>

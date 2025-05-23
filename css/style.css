@@ -734,6 +734,53 @@ span {
   width: 100%;
 }
 
+.toast {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  min-width: 220px;
+  max-width: 90vw;
+  background: #181f23;
+  color: #fff;
+  padding: 1.5rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 30px var(--main-color);
+  font-size: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: opacity 0.4s, transform 0.4s;
+  transform: translateY(40px);
+}
+.toast.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.toast.success {
+  border-left: 6px solid #00ffee;
+}
+.toast.error {
+  border-left: 6px solid #ff4d4f;
+}
+.toast .toast-spinner {
+  border: 3px solid #00ffee;
+  border-top: 3px solid #222;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  animation: spin 1s linear infinite;
+  margin-right: 1rem;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* ==========================================================
    MY GUIDE SECTION
    ========================================================== */
@@ -927,6 +974,32 @@ span {
   text-align: center;
   font-size: 16px;
   color: white;
+}
+
+/* ==========================================================
+   SCROLL TO TOP BUTTON
+   ========================================================== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: var(--main-color);
+  color: black;
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  display: none; /* Oculto por defecto */
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--main-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px var(--main-color);
 }
 
 /* ==========================================================
@@ -1242,31 +1315,4 @@ span {
   .heading {
     font-size: 50px;
   }
-}
-
-/* ==========================================================
-   SCROLL TO TOP BUTTON
-   ========================================================== */
-/* Botón de "scroll-to-top" */
-.scroll-to-top {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: var(--main-color);
-  color: black;
-  border-radius: 50%;
-  width: 8rem;
-  height: 8rem;
-  display: none; /* Oculto por defecto */
-  justify-content: center;
-  align-items: center;
-  font-size: 4rem;
-  cursor: pointer;
-  box-shadow: 0 0 15px var(--main-color);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.scroll-to-top:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 25px var(--main-color);
 }
