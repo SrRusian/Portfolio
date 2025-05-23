@@ -1198,6 +1198,7 @@ span {
   }
   .service-info h4 {
     padding-top: 10px;
+    font-weight: 700px;
   }
   .heading {
     font-size: 55px;
@@ -1209,13 +1210,18 @@ span {
   }
   .service-info h4 {
     padding-top: 5px;
-    font-size: 16px;
+    font-size: 14px;
   }
   .service-info p {
     font-size: 12px;
   }
   .heading {
     font-size: 55px;
+  }
+  .certificates .heading {
+    font-size: 40px;
+    padding-bottom: 1rem;
+    margin: 2rem 0;
   }
 }
 @media (max-width: 379px) {
